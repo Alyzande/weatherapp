@@ -5,12 +5,12 @@ import { ApiClient } from "./ApiClient";
 
 function WeatherCard() {
 
-const weatherInfo = useState({
+const [weatherInfo, updateWeatherDisplay] = useState({
   weathersDate: "a date passed as a string",
   weathersImage: "image placeholder",
   degreeDisplay: 0,
   weatherText: "long string",
-  windInfo: 0,
+  windInfo: 0
 });
 
 const apiClient = new ApiClient();
@@ -25,12 +25,25 @@ apiClient.getWeather()
   console.log (error);
 })
 
+const updateWeather = (responseObject) => {
+  updateWeatherDisplay({
+    weathersDate: responseObject.weathersDate,
+    weathersImage: responseObject.weathersImage,
+    degreeDisplay: responseObject.degreeDisplay,
+    weatherText: responseObject.weatherText,
+    windInfo: responseObject.windInfo
+  })
+}
 
-//const apistring ="https://api.openweathermap.org/data/3.0/onecall?lat=53.38&lon=-1.47&exclude=current,minutely,hourly,alerts&units=metric&appid=10f8ebf1d0c06f8e93882e24c19e88eb";
 
   return (
     <div className="WeatherCard">
       weathersDate, weathersImage, degreeDisplay, weatherText, windInfo
+       {/* {current.weathersDate}
+       {current.weather[i].icon}
+        {current.weather[i].degreeDisplay}
+         {current.weather[i].weatherText} 
+         {current.weather[i].windInfo}  */}
     </div>
   );
 }
