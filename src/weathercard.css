@@ -1,0 +1,9 @@
+.WeatherCard {
+    background-color: #fff;
+    color: #000;
+    margin-top: 20px;
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+  }
