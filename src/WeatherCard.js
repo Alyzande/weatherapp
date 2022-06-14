@@ -15,7 +15,7 @@ const weatherInfo = useState({
 
 const apiClient = new ApiClient();
 
-apiClient.getWeather(53.383331,-1.466667)
+apiClient.getWeather()
   //console.log(getWeather)
   .then((jsonResponse) =>{
   console.log("response", jsonResponse.data);
