@@ -8,7 +8,7 @@
     border-radius: 10px;
   }
 
-  #datespan,#degreedisplay, #windspeed {
+  #datespan,#degreedisplay, #windspeed, #weathertext {
     font-size: 30px;
     margin: 10px;
   }
