@@ -1,0 +1,9 @@
+https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+
+https://api.openweathermap.org/data/3.0/onecall?lat=53.382969&lon=-1.4659&exclude=hourly,minutely&units=metric&appid=9c78fa45e1c21da83e6115229a3b7a70
+
+
+https://api.openweathermap.org/data/3.0/onecall?lat=53.382969&lon=-1.4659&exclude=hourly,minutely&units=metric&appid=10f8ebf1d0c06f8e93882e24c19e88eb
+
+
+https://api.openweathermap.org/data/3.0/onecall?lat=0&lon=0&exclude=hourly,minutely&units=metric&appid=9c78fa45e1c21da83e6115229a3b7a70
