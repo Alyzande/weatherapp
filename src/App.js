@@ -10,9 +10,8 @@ import React, {useState, useEffect} from 'react';
 
 function App() {
 
-
   const [weatherInfo, updateWeatherDisplay] = useState([{
-    dt: "1646318698",
+    dt: 1655294401,
     weather: {
       icon: "image PH1", 
       description: "weather description placeholder"},
@@ -21,7 +20,7 @@ function App() {
     wind_speed: 2
   }, 
   {
-    dt: "1646318697",
+    dt: 1655294400,
     weather: {
       icon: "image PH2", 
       description: "some text appears here again"},
@@ -47,7 +46,7 @@ function App() {
   },[])
   
 const buildDivs = () =>{
-  return weatherInfo.map((weatherRow) => {
+  return weatherInfo.slice(0, 7).map((weatherRow) => {
     console.log("this is weather row" + weatherRow.weather.icon)
     return (
       <WeatherCard     

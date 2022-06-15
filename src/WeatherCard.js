@@ -9,7 +9,7 @@ function WeatherCard(props) {
   return (
     <div className="WeatherCard">
       <span id="datespan">
-      <Moment format="D MMM">
+      <Moment format="ddd D">
         {props.weathersDate} 
       </Moment>
       </span>imagehere
