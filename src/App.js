@@ -72,6 +72,25 @@ const buildWeatherRange = () =>{
     )})
 }
 
+// const sheffield = {
+//   lat: 53.383331,
+//   lon: -1.466667
+// }
+// const london = {
+//   lat: 51.509865,
+//   lon: -0.118092
+// }
+
+// const edinburgh = {
+//   lat: 55.953251,
+//   lon: -3.188267
+// }
+
+// const cardiff = {
+//   lat: 51.481583,
+//   lon: -3.179090
+// }
+
 
   return (
     <div className="App">
@@ -87,9 +106,10 @@ const buildWeatherRange = () =>{
         />{' '}
       Weather App 2022
       </Navbar.Brand><select name="location" id="location">
-  <option value="Sheffield">Sheffield</option>
-  <option value="anotherPlace">Not Sheffield</option>
-  <option value="yetAnotherPlace">Still not Sheffield</option>
+  <option value="sheffield">Sheffield</option>
+  <option value="london">London</option>
+  <option value="edinburgh">Edinburgh</option>
+  <option value="cardiff">Cardiff</option>
 
 </select>
     </Container>
