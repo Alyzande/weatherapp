@@ -17,8 +17,8 @@ export class ApiClient {
             });
     }
 
-    getWeather(){
-        return this.getWeatherList("https://api.openweathermap.org/data/2.5/onecall?lat=53.382969&lon=-1.4659&exclude=hourly,minutely&units=metric&appid=9c78fa45e1c21da83e6115229a3b7a70")
+    getWeather(lat, lon){
+        return this.getWeatherList(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=metric&appid=9c78fa45e1c21da83e6115229a3b7a70`)
 
     }
 

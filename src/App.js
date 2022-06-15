@@ -11,6 +11,11 @@ import WeatherRange from './WeatherRange';
 
 function App() {
 
+const [coords, changeCoords] = useState ({
+  lat: 53.383331,
+  lon: -1.466667
+})
+
   const [weatherInfo, updateWeatherDisplay] = useState([{
     dt: 1655294401,
     weather: {
@@ -33,7 +38,7 @@ function App() {
   const apiClient = new ApiClient();
   
   const updateWeather =() =>{
-      apiClient.getWeather()
+      apiClient.getWeather(coords.lat, coords.lon)
          .then((jsonResponse) =>{
         updateWeatherDisplay(jsonResponse.data.daily);
       })
@@ -46,16 +51,20 @@ function App() {
     updateWeather();
   },[])
   
+  useEffect(() =>{
+    updateWeather();
+  },[coords])
+
 const buildDivs = () =>{
   return weatherInfo.slice(0, 7).map((weatherRow) => {
-    console.log("this is weather row" + weatherRow.weather.icon)
+    //console.log("this is weather row" + weatherRow.weather.icon)
     return (
       <WeatherCard     
       key={weatherRow.dt}
       weathersDate={weatherRow.dt}
-      weathersImage={weatherRow.weather.icon}
+      weathersImage={weatherRow.weather.length ? weatherRow.weather[0].icon:""}
       degreeDisplay={weatherRow.temp.day}
-      weatherText={weatherRow.weather.main}
+      weatherText={weatherRow.weather.length ? weatherRow.weather[0].main: ""}
       windInfo={weatherRow.wind_speed}
       />
     )
@@ -72,24 +81,38 @@ const buildWeatherRange = () =>{
     )})
 }
 
-// const sheffield = {
-//   lat: 53.383331,
-//   lon: -1.466667
-// }
-// const london = {
-//   lat: 51.509865,
-//   lon: -0.118092
-// }
+const sheffield = {
+  lat: 53.383331,
+  lon: -1.466667
+}
+const london = {
+  lat: 51.509865,
+  lon: -0.118092
+}
 
-// const edinburgh = {
-//   lat: 55.953251,
-//   lon: -3.188267
-// }
+const edinburgh = {
+  lat: 55.953251,
+  lon: -3.188267
+}
 
-// const cardiff = {
-//   lat: 51.481583,
-//   lon: -3.179090
-// }
+const cardiff = {
+  lat: 51.481583,
+  lon: -3.179090
+}
+
+const handleLocation = (e) => {
+  //do stuff with location
+  if (e.target.value === "london") {
+      changeCoords(london)
+  } else if (e.target.value === "edinburgh") {
+      changeCoords(edinburgh)
+  } else if (e.target.value === "cardiff") {
+      changeCoords(cardiff)
+  } else if (e.target.value === "sheffield") {
+      changeCoords(sheffield)
+  }
+
+}
 
 
   return (
@@ -105,7 +128,8 @@ const buildWeatherRange = () =>{
           className="d-inline-block align-top"
         />{' '}
       Weather App 2022
-      </Navbar.Brand><select name="location" id="location">
+      </Navbar.Brand><select name="location" id="location" onChange={(e) =>
+      handleLocation(e)}>
   <option value="sheffield">Sheffield</option>
   <option value="london">London</option>
   <option value="edinburgh">Edinburgh</option>

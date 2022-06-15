@@ -19,7 +19,7 @@ function WeatherCard(props) {
       <span id="degreedisplay">
       {degreeRounded}°C
       </span>
-      <span id="weathertext">PH{props.weatherText}. </span>  
+      <span id="weathertext">{props.weatherText}. </span>  
        Wind:<span id="windspeed">{windSpeed}</span>m/s
     </div>
   );
