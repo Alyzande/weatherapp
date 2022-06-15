@@ -14,7 +14,7 @@ function App() {
     dt: 1655294401,
     weather: {
       icon: "image PH1", 
-      description: "weather description placeholder"},
+      main: "weatherdescPH1"},
     temp: {
       day: 1},
     wind_speed: 2
@@ -23,7 +23,7 @@ function App() {
     dt: 1655294400,
     weather: {
       icon: "image PH2", 
-      description: "some text appears here again"},
+      main: "weatherdescPH2"},
     temp: {
       day: 1},
     wind_speed: 2
@@ -54,7 +54,7 @@ const buildDivs = () =>{
       weathersDate={weatherRow.dt}
       weathersImage={weatherRow.weather.icon}
       degreeDisplay={weatherRow.temp.day}
-      weatherText={weatherRow.weather.description}
+      weatherText={weatherRow.weather.main}
       windInfo={weatherRow.wind_speed}
       />
     )
