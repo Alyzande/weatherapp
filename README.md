@@ -8,7 +8,7 @@ Uses open weather map api
 
 ## Display
 
-Displays 
+Displays next 7 days of:
 
 day, date, weather icon, rounded temperature in C, short text description, wind speed in m/s. 
 
