@@ -5,6 +5,7 @@ import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import Logo from './logo.png';
 import { ApiClient } from "./ApiClient";
 import React, {useState, useEffect} from 'react';
+import WeatherRange from './WeatherRange';
 
 
 
@@ -61,6 +62,16 @@ const buildDivs = () =>{
   })
 }
 
+const buildWeatherRange = () =>{
+  return weatherInfo.slice(0, 1).map((weatherStartDate) => {
+    return (
+      <WeatherRange     
+      key={weatherStartDate.dt}
+      weathersDate={weatherStartDate.dt} 
+      />
+    )})
+}
+
 
   return (
     <div className="App">
@@ -85,11 +96,14 @@ const buildDivs = () =>{
   </Navbar>
   <br />
     <Container className="bob">
-            Weather for date range: weatherRange
+            Weather for 
+            {buildWeatherRange()}
+            <WeatherRange />
       <Row >
       <Col sm={8}>
  
       {buildDivs()}
+    
       
 
        </Col> 
