@@ -85,7 +85,7 @@ const buildWeatherRange = () =>{
           height="40"
           className="d-inline-block align-top"
         />{' '}
-      Weather App
+      Weather App 2022
       </Navbar.Brand><select name="location" id="location">
   <option value="Sheffield">Sheffield</option>
   <option value="anotherPlace">Not Sheffield</option>
@@ -96,9 +96,8 @@ const buildWeatherRange = () =>{
   </Navbar>
   <br />
     <Container className="bob">
-            Weather for 
             {buildWeatherRange()}
-            <WeatherRange />
+
       <Row >
       <Col sm={8}>
  

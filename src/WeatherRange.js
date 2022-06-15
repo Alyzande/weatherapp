@@ -5,12 +5,13 @@ import 'moment-timezone';
 
 
 function WeatherRange(props) {
-
   const dateToday = (props.weathersDate * 1000);
  
   return (
     <div className="WeatherRange">
-      <Moment format="ddd D">{dateToday}</Moment>
+        Weather forecast for&nbsp;
+      <Moment format="dddd Do MMMM YYYY">{dateToday}</Moment>
+      
     </div>
   );
 }
