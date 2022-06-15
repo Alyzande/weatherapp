@@ -9,7 +9,7 @@ function WeatherRange(props) {
  
   return (
     <div className="WeatherRange">
-        Weather forecast for&nbsp;
+        7 Day forecast for&nbsp;
       <Moment format="dddd Do MMMM YYYY">{dateToday}</Moment>
       
     </div>
