@@ -6,20 +6,18 @@ import 'moment-timezone';
 
 function WeatherCard(props) {
 
-
   return (
-    
     <div className="WeatherCard">
       <span id="datespan">
       <Moment format="D MMM">
         {props.weathersDate} 
       </Moment>
-      </span>
+      </span>imagehere
       {props.weathersImage} 
       <span id="degreedisplay">
       {props.degreeDisplay}°C
       </span>
-      <span>{props.weatherText} </span>  
+      <span>weathertexthere{props.weatherText} </span>  
        Wind Speed <span id="windspeed">{props.windInfo}mph</span>
     </div>
   );

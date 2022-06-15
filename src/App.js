@@ -12,18 +12,15 @@ function App() {
 
 
   const [weatherInfo, updateWeatherDisplay] = useState([{
-    
     dt: "1646318698",
     weather: {
       icon: "image PH1", 
-      description: "some text appears here"},
+      description: "weather description placeholder"},
     temp: {
       day: 1},
     wind_speed: 2
-  
   }, 
   {
-    
     dt: "1646318697",
     weather: {
       icon: "image PH2", 
@@ -31,35 +28,27 @@ function App() {
     temp: {
       day: 1},
     wind_speed: 2
-  
   }]);
   
   const apiClient = new ApiClient();
   
   const updateWeather =() =>{
-  
       apiClient.getWeather()
-        //console.log(getWeather)
-        .then((jsonResponse) =>{
-        //console.log("response", jsonResponse.data);
+         .then((jsonResponse) =>{
         updateWeatherDisplay(jsonResponse.data.daily);
-  
       })
       .catch((error) => {
         console.log (error);
       })
-  
   }
+
   useEffect(() =>{
-    //stuff
     updateWeather();
   },[])
   
 const buildDivs = () =>{
-  //console.log(weatherInfo)
   return weatherInfo.map((weatherRow) => {
-
-    //console.log("this is weather row" + weatherRow.dt)
+    console.log("this is weather row" + weatherRow.weather.icon)
     return (
       <WeatherCard     
       key={weatherRow.dt}
@@ -68,12 +57,8 @@ const buildDivs = () =>{
       degreeDisplay={weatherRow.temp.day}
       weatherText={weatherRow.weather.description}
       windInfo={weatherRow.wind_speed}
-      
       />
-
     )
-
-
   })
 }
 
@@ -84,14 +69,19 @@ const buildDivs = () =>{
     <Container>
       <Navbar.Brand href="#home">
         <img
-          alt=""
+          alt="Daily Weather app sun and cloud logo"
           src={Logo}
           width="40"
           height="40"
           className="d-inline-block align-top"
         />{' '}
       Weather App
-      </Navbar.Brand>
+      </Navbar.Brand><select name="location" id="location">
+  <option value="Sheffield">Sheffield</option>
+  <option value="anotherPlace">Not Sheffield</option>
+  <option value="yetAnotherPlace">Still not Sheffield</option>
+
+</select>
     </Container>
   </Navbar>
   <br />
