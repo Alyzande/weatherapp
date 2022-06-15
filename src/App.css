@@ -2,7 +2,10 @@
   text-align: center;
 }
 body {
-  background-color: #e0e3e6 !important;
+  background-color: #eeeff0 !important;
+}
+.bob {
+  background-color: white;
 }
 
 .App-header {
