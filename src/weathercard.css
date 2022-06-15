@@ -7,3 +7,8 @@
     border: 1px solid #e4e4e4;
     border-radius: 10px;
   }
+
+  #datespan,#degreedisplay, #windspeed {
+    font-size: 30px;
+    margin: 10px;
+  }
